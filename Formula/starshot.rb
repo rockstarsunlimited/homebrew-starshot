@@ -20,7 +20,7 @@ class Starshot < Formula
     (bin/"starshot").write <<~SH
       #!/bin/sh
       export STARSHOT_EXECUTABLE="$0"
-      exec "#{Formula["bun"].opt_bin}/bun" "#{libexec}/bin/starshot.ts" "$@"
+      exec "#{formula_opt_bin("bun")}/bun" "#{libexec}/bin/starshot.ts" "$@"
     SH
     bin.install_symlink libexec/"bin/starshot-native" => "starshot-native"
   end
