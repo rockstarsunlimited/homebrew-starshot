@@ -9,6 +9,7 @@ class Starshot < Formula
   version "0.2.2"
   sha256 "6688c984c1aaef002a808d2d177fdbb61f856bd6a9ffecc494845ce4ba915a6b"
   license "MIT"
+  revision 1
 
   depends_on "bun"
   depends_on :macos
@@ -19,7 +20,7 @@ class Starshot < Formula
     (bin/"starshot").write <<~SH
       #!/bin/sh
       export STARSHOT_EXECUTABLE="$0"
-      exec "#{libexec}/bin/starshot.ts" "$@"
+      exec "#{Formula["bun"].opt_bin}/bun" "#{libexec}/bin/starshot.ts" "$@"
     SH
     bin.install_symlink libexec/"bin/starshot-native" => "starshot-native"
   end
