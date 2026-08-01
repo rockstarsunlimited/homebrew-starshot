@@ -8,8 +8,8 @@ class Starshot < Formula
   url "https://github.com/rockstarsunlimited/starshot/releases/download/v0.2.0/starshot-macos.zip"
   version "0.2.0"
   sha256 "9e1ca7773163ffa417abbccb05649849572b2cce7defc74e2f37a8119325cb58"
-  revision 1
   license "MIT"
+  revision 1
 
   depends_on "bun"
   depends_on :macos
