@@ -8,6 +8,7 @@ class Starshot < Formula
   url "https://github.com/rockstarsunlimited/starshot/releases/download/v0.2.0/starshot-macos.zip"
   version "0.2.0"
   sha256 "9e1ca7773163ffa417abbccb05649849572b2cce7defc74e2f37a8119325cb58"
+  revision 1
   license "MIT"
 
   depends_on "bun"
@@ -15,7 +16,12 @@ class Starshot < Formula
 
   def install
     libexec.install Dir["*"]
-    bin.install_symlink libexec/"bin/starshot.ts" => "starshot"
+    libexec.install ".env.schema"
+    (bin/"starshot").write <<~SH
+      #!/bin/sh
+      export STARSHOT_EXECUTABLE="$0"
+      exec "#{libexec}/bin/starshot.ts" "$@"
+    SH
     bin.install_symlink libexec/"bin/starshot-native" => "starshot-native"
   end
 
