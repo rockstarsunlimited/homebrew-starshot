@@ -5,9 +5,9 @@
 class Starshot < Formula
   desc "Screenshot uploader for humans and automation"
   homepage "https://github.com/rockstarsunlimited/starshot"
-  url "https://github.com/rockstarsunlimited/starshot/releases/download/v0.2.5/starshot-macos.zip"
-  version "0.2.5"
-  sha256 "67689a2e424b18a20beef740da12d7cb28e1dfaaa8a52f95040645fca3ed5314"
+  url "https://github.com/rockstarsunlimited/starshot/releases/download/v0.2.6/starshot-macos.zip"
+  version "0.2.6"
+  sha256 "862c3860db7063326bf4d08ca30709d3ed16679c33aca42fd6f2b1e33e007329"
   license "MIT"
 
   depends_on "bun"
